@@ -9,7 +9,7 @@ import cv2
 from tritonclient.utils import *
 import tritonclient.grpc as grpcclient
 
-from map import calc_darknet_map, read_darknet_result_json, get_all_darknet_anno
+from utils import calc_darknet_map, read_darknet_result_json, get_all_darknet_anno
 
 BATCH_SIZE = 1
 
