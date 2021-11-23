@@ -1,0 +1,72 @@
+[
+{
+ "frame_id":1, 
+ "filename":"/home/artem/Dev/darknet_triton_validator/example/entrance.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.951007, "center_y":0.910152, "width":0.083323, "height":0.151889}, "confidence":0.947098}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.821520, "center_y":0.841484, "width":0.065444, "height":0.140816}, "confidence":0.937559}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.950485, "center_y":0.781356, "width":0.048371, "height":0.104676}, "confidence":0.913190}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.007783, "center_y":0.410350, "width":0.015897, "height":0.060650}, "confidence":0.770140}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.611665, "center_y":0.315593, "width":0.035414, "height":0.089388}, "confidence":0.755367}
+ ] 
+}, 
+{
+ "frame_id":2, 
+ "filename":"/home/artem/Dev/darknet_triton_validator/example/entrance.png", 
+ "objects": [ 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.951001, "center_y":0.910188, "width":0.083335, "height":0.151906}, "confidence":0.946979}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.821509, "center_y":0.841454, "width":0.065440, "height":0.140740}, "confidence":0.936948}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.950478, "center_y":0.781392, "width":0.048403, "height":0.104733}, "confidence":0.913116}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.007781, "center_y":0.410375, "width":0.015898, "height":0.060706}, "confidence":0.770762}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.611662, "center_y":0.315574, "width":0.035397, "height":0.089346}, "confidence":0.754893}
+ ] 
+}, 
+{
+ "frame_id":3, 
+ "filename":"/home/artem/Dev/darknet_triton_validator/example/market.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.695493, "center_y":0.187674, "width":0.082871, "height":0.143101}, "confidence":0.984691}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.882089, "center_y":0.231120, "width":0.079190, "height":0.142711}, "confidence":0.951502}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.103149, "center_y":0.129980, "width":0.085818, "height":0.144998}, "confidence":0.924661}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.541869, "center_y":0.214125, "width":0.077280, "height":0.126103}, "confidence":0.917508}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.299161, "center_y":0.250189, "width":0.081224, "height":0.119206}, "confidence":0.906299}
+ ] 
+}, 
+{
+ "frame_id":4, 
+ "filename":"/home/artem/Dev/darknet_triton_validator/example/market.png", 
+ "objects": [ 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.695503, "center_y":0.187699, "width":0.082874, "height":0.143183}, "confidence":0.984684}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.882094, "center_y":0.231107, "width":0.079183, "height":0.142708}, "confidence":0.951400}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.103141, "center_y":0.129969, "width":0.085795, "height":0.144952}, "confidence":0.923877}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.541869, "center_y":0.214174, "width":0.077284, "height":0.126093}, "confidence":0.917884}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.299168, "center_y":0.250211, "width":0.081221, "height":0.119161}, "confidence":0.905512}
+ ] 
+}, 
+{
+ "frame_id":5, 
+ "filename":"/home/artem/Dev/darknet_triton_validator/example/queue.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.491116, "center_y":0.308341, "width":0.071982, "height":0.122069}, "confidence":0.963816}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.173095, "center_y":0.542467, "width":0.075347, "height":0.130786}, "confidence":0.940046}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.777094, "center_y":0.040230, "width":0.054059, "height":0.086440}, "confidence":0.919896}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.369525, "center_y":0.459784, "width":0.094166, "height":0.126822}, "confidence":0.887922}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.754968, "center_y":0.279315, "width":0.072179, "height":0.116607}, "confidence":0.716150}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.925848, "center_y":0.030760, "width":0.060983, "height":0.064620}, "confidence":0.504884}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.701182, "center_y":0.146485, "width":0.051541, "height":0.098714}, "confidence":0.494984}
+ ] 
+}, 
+{
+ "frame_id":6, 
+ "filename":"/home/artem/Dev/darknet_triton_validator/example/queue.png", 
+ "objects": [ 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.491118, "center_y":0.308310, "width":0.072028, "height":0.122045}, "confidence":0.963481}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.173096, "center_y":0.542447, "width":0.075354, "height":0.130749}, "confidence":0.939156}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.777090, "center_y":0.040227, "width":0.054072, "height":0.086424}, "confidence":0.919661}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.369523, "center_y":0.459771, "width":0.094226, "height":0.126802}, "confidence":0.887473}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.754979, "center_y":0.279328, "width":0.072175, "height":0.116680}, "confidence":0.712280}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.925878, "center_y":0.030702, "width":0.061008, "height":0.064513}, "confidence":0.502642}, 
+  {"class_id":0, "name":"head", "relative_coordinates":{"center_x":0.701188, "center_y":0.146487, "width":0.051511, "height":0.098735}, "confidence":0.491717}
+ ] 
+}
+]
