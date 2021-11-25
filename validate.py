@@ -139,9 +139,9 @@ class YoloNet:
         result = []
         for i in range(len(imgs)):
             result.append({
-                "boxes": res['OUTPUT_01_BOXES'][res['OUTPUT_01_INDEXES'] == i],
-                "classes": res['OUTPUT_01_CLASS'][res['OUTPUT_01_INDEXES'] == i],
-                "probs": res['OUTPUT_01_PROBS'][res['OUTPUT_01_INDEXES'] == i]
+                "boxes": res['OUTPUT_01_BOXES'],
+                "classes": res['OUTPUT_01_CLASS'],
+                "probs": res['OUTPUT_01_PROBS']
             })
         return result
 
@@ -200,11 +200,15 @@ def run(opt):
                     model_name=opt.model,
                     model_version='1'
                     )
+    darknet_result = read_darknet_result_json(opt.json_input)
 
-    images_dir = opt.images_dir
-
+    images_dir = opt.images_dir if opt.images_dir != pathlib.Path('no.dir') else None
+    if images_dir is not None:
+        files = get_files(images_dir, ('*.jpg', '*.jpeg', '*.png'))
+    else:
+        files = list(darknet_result.keys())
     detections = {}
-    for file in get_files(images_dir, ('*.jpg', '*.jpeg', '*.png')):
+    for file in files:
         frame = cv2.imread(str(file))
         frame = frame.copy()[np.newaxis, ...]
 
@@ -214,16 +218,15 @@ def run(opt):
         for idx, out in enumerate(output):
             if out["boxes"].size != 0:
                 # bbox [[x1,y1,x2,y2]
-                bbox = out["boxes"].astype('float32')
-                probs = out["probs"].reshape(-1, 1).astype('float32')
-                classes = out["classes"].reshape(-1, 1).astype('float32')
+                bbox = out["boxes"][0].astype('float32')
+                probs = out["probs"][0].reshape(-1, 1).astype('float32')
+                classes = out["classes"][0].reshape(-1, 1).astype('float32')
                 rel_boxes = tlbr_to_darknet_relative(bbox, frame.shape)
-                detections[file.stem] = np.hstack([classes, rel_boxes, probs])
+                detections[file] = np.hstack([classes, rel_boxes, probs])
             else:
-                detections[file.stem] = np.asarray([])
+                detections[file] = np.asarray([])
 
-    anno = get_all_darknet_anno(images_dir)
-    darknet_result = read_darknet_result_json(opt.json_input)
+    anno = get_all_darknet_anno(files)
     print(f'Darknet model result: {calc_darknet_map(anno, darknet_result)}')
     print(f'TRT model result: {calc_darknet_map(anno, detections)}')
 
@@ -235,7 +238,7 @@ if __name__ == '__main__':
     parser.add_argument('--model', type=str,
                         default='yolov4_1_class_ensemble_nodec', help='TRT model name in TritonServer')
     parser.add_argument('--images_dir', type=pathlib.Path,
-                        default='example', help='Directory with images')
+                        default='no.dir', help='Directory with images')
     parser.add_argument('--output', type=str, default='',
                         help='output folder')  # output folder
     parser.add_argument('--conf-thres', type=float,

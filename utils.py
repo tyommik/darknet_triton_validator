@@ -3,8 +3,8 @@ import json
 import pathlib
 
 import numpy as np
-from utils import linear_assignment
-# from scipy.optimize import linear_sum_assignment as linear_assignment
+# from utils import linear_assignment
+from scipy.optimize import linear_sum_assignment as linear_assignment
 
 
 class ObjectDetectionMetric:
@@ -50,7 +50,7 @@ class ObjectDetectionMetric:
         else:
             matrix_IOU[same] *= (1 + 1e-06)
 
-        self.matched = np.asarray(linear_assignment(-matrix_IOU)) #.transpose()
+        self.matched = np.asarray(linear_assignment(-matrix_IOU)).transpose()
         self.unmatched_groundtruth = list(set(range(number_groundtruth)) - set(self.matched[:, 0]))
         self.unmatched_prediction = list(set(range(number_prediction)) - set(self.matched[:, 1]))
         for n, (i, j) in reversed(list(enumerate(self.matched))):
@@ -295,7 +295,7 @@ def read_darknet_result_json(file_path):
 
     result = {}
     for file in json_data:
-        filename = pathlib.Path(file['filename']).stem
+        filename = pathlib.Path(file['filename'])
         darknet_bboxes = []
         for obj in file['objects']:
             box = obj['relative_coordinates']
@@ -313,11 +313,12 @@ def read_darknet_result_json(file_path):
     return result
 
 
-def get_all_darknet_anno(root_path):
+def get_all_darknet_anno(img_files: pathlib.Path):
     result = {}
-    for file in pathlib.Path(root_path).glob('*.txt'):
-        anno = read_darknet_anno(file)
-        result[file.stem] = anno
+    for file in img_files:
+        ann_file = file.with_suffix('.txt')
+        anno = read_darknet_anno(ann_file)
+        result[file] = anno
     return result
 
 
